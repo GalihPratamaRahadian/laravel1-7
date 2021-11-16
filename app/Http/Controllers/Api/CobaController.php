@@ -41,7 +41,6 @@ class CobaController extends Controller
             'nama' => $request->nama,
             'no_tlp' =>$request->no_tlp,
             'alamat' =>$request->alamat,
-            'groups_id' => 0,
         ]);
 
         if ($friends)
