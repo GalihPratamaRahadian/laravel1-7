@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Friends;
 use App\Http\Controller\Api\CobaController;
 use App\Http\Controller\Api\GroupsController;
 use Illuminate\Http\Request;
