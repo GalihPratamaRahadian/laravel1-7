@@ -3,15 +3,15 @@
 @section('title', 'Groups')
 
 @section('content')
-<a href="/groups/create" class="card-link btn-primary">Tambah Group</a>
+<a href="/groups/create" button type="button" class="card-link btn btn-primary btn-sm mb-3 mt-3">Tambah Group</a></button>
 @foreach($groups as $group)
 
 <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <a href="/groups/{{ $group['id'] }}" class="card-title">{{ $group['name'] }}</a>
-    <p class="card-text">{{ $group['description'] }}</p>
+  <div class="card-body bg-light mb-3 mt-3">
+    <h3><a href="/groups/{{ $group['id'] }}" class="card-title">{{ $group['name'] }}</a></h3>
+    <p class="card-text">Deskripsi grup: {{ $group['description'] }}</p>
     <hr>
-    <a href="/groups/addmember/{{$group['id']}}" class="card-link btn-primary">Tambah Anggota Teman</a>
+    <a href="/groups/addmember/{{$group['id']}}"button type="button" class="card-link btn btn-outline-primary btn-sm mb-3 mt-3">Tambah Anggota Teman</a></button>
     
     <ul class="list-group">
     @foreach($group->friends as $friend)
@@ -20,7 +20,7 @@
       <form action="/groups/deleteaddmember/{{ $friend->id }}" method="POST">
     @csrf
     @method('PUT')
-    <button type="submit" class="bedge card-link btn-danger">X</button>
+    <button type="submit" class="bedge card-link btn btn-danger btn-sm">x</button>
   </form>
       </li>
 
@@ -28,11 +28,11 @@
   </ul>
 
     </hr>
-    <a href="/groups/{{ $group['id'] }}/edit" class="card-link btn-warning">Edit group</a>
+    <a href="/groups/{{ $group['id'] }}/edit" button type="button" class="card-link btn btn-outline-warning btn-sm mt-2 mb-2">Edit group</a></button>
     <form action="/Groups/{{ $group['id']}}" method="POST">
     @csrf
     @method('DELETE')
-    <button class="card-link btn-danger">Delete group</button>
+    <button class="card-link btn btn-outline-danger btn-sm mb-2 mt-2">Delete group</button>
   </form>
   </div>
 </div>
